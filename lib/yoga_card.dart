@@ -35,7 +35,7 @@ class YogaCard extends StatelessWidget {
           ),
           Text(
             asana,
-            style: TextStyle(fontSize: 24),
+            style: TextStyle(fontSize: 20),
           )
         ],
       ),

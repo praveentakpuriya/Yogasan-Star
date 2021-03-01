@@ -48,10 +48,24 @@ class _LoginState extends State<Login> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.black87,
-        title: Text('Login'),
-        centerTitle: true,
-      ),
+          backgroundColor: Colors.orange[700],
+          title: Text('Login'),
+          centerTitle: true,
+          leading: GestureDetector(
+            onTap: () async {
+              Auth auth = Auth();
+              await auth.signOut();
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Home(),
+                ),
+              );
+            },
+            child: Icon(
+              Icons.arrow_back, // add custom icons also
+            ),
+          )),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.symmetric(vertical: 0.0, horizontal: 32.0),

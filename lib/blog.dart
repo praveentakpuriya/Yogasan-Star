@@ -1,23 +1,20 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:yoga_guru/login.dart';
-import 'package:yoga_guru/poses.dart';
 import 'package:yoga_guru/profile.dart';
-import 'package:yoga_guru/scale_route.dart';
-import 'package:yoga_guru/util/pose_data.dart';
 import 'package:yoga_guru/util/user.dart';
-import 'package:yoga_guru/blog.dart';
+import 'package:yoga_guru/home.dart';
 import 'package:yoga_guru/usertab.dart';
 import 'package:yoga_guru/store.dart';
 
-class Home extends StatelessWidget {
+class Blog extends StatelessWidget {
   final String email;
   final String uid;
   final String displayName;
   final String photoUrl;
   final List<CameraDescription> cameras;
 
-  const Home({
+  const Blog({
     this.email,
     this.uid,
     this.displayName,
@@ -28,8 +25,7 @@ class Home extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     User user = User();
-    int _currentIndex = 0;
-    String name = (user.displayName == null) ? '________ ' : user.displayName;
+    int _currentIndex = 1;
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
@@ -147,138 +143,13 @@ class Home extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.only(top: 10.0),
                 child: Image(
-                  image: AssetImage('assets/images/yoga1.png'),
+                  image: AssetImage('assets/images/blog.png'),
                   width: 202,
                   height: 250,
                 ),
               ),
-              // Welcome Text
-              Padding(
-                padding: const EdgeInsets.all(5.0),
-                child: Text(
-                  'Welcome\n$name',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(
-                    fontSize: 22,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
-
-              // Beginner Button
-              Padding(
-                padding: const EdgeInsets.all(32.0),
-                child: TextButton(
-                  child: Text(
-                    'Beginner',
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.white,
-                    ),
-                  ),
-                  style: TextButton.styleFrom(
-                    backgroundColor: Colors.green,
-                    minimumSize: Size.fromHeight(1),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    side: BorderSide(
-                      width: 1.4,
-                      color: Colors.orange[700],
-                    ),
-                  ),
-                  onPressed: () => _onPoseSelect(
-                    context,
-                    'Beginner',
-                    beginnerAsanas,
-                    Colors.green,
-                  ),
-                ),
-              ),
-
-              // Intermediate Button
-              Padding(
-                padding: const EdgeInsets.all(32.0),
-                child: TextButton(
-                  child: Text(
-                    'Intermediate',
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.white,
-                    ),
-                  ),
-                  style: TextButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                    minimumSize: Size.fromHeight(1),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    side: BorderSide(
-                      width: 1.4,
-                      color: Colors.orange[700],
-                    ),
-                  ),
-                  onPressed: () => _onPoseSelect(
-                    context,
-                    'Intermediate',
-                    intermediateAsanas,
-                    Colors.blue,
-                  ),
-                ),
-              ),
-
-              // Advance Button
-              Padding(
-                padding: const EdgeInsets.all(32.0),
-                child: TextButton(
-                  child: Text(
-                    'Advance',
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.white,
-                    ),
-                  ),
-                  style: TextButton.styleFrom(
-                    backgroundColor: Colors.deepPurple[400],
-                    minimumSize: Size.fromHeight(1),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    side: BorderSide(
-                      width: 1.4,
-                      color: Colors.orange[700],
-                    ),
-                  ),
-                  onPressed: () => _onPoseSelect(
-                    context,
-                    'Advance',
-                    advanceAsanas,
-                    Colors.deepPurple[400],
-                  ),
-                ),
-              ),
             ],
           ),
-        ),
-      ),
-    );
-  }
-
-  void _onPoseSelect(
-    BuildContext context,
-    String title,
-    List<String> asanas,
-    Color color,
-  ) async {
-    Navigator.push(
-      context,
-      ScaleRoute(
-        page: Poses(
-          cameras: cameras,
-          title: title,
-          model: "assets/models/posenet_mv1_075_float_from_checkpoints.tflite",
-          asanas: asanas,
-          color: color,
         ),
       ),
     );
