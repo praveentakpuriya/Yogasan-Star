@@ -72,7 +72,7 @@ class MyApp extends StatelessWidget {
       initialRoute: (email != null && uid != null) ? '/' : '/',
       routes: <String, WidgetBuilder>{
         '/': (BuildContext context) {
-          var home = Home(
+          var home = MyHomePage(
             email: email,
             uid: uid,
             displayName: displayName,
