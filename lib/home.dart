@@ -77,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.orange[700],
-        title: Text('Yoga-Star'),
+        title: Text('Yogasana-Star'),
         centerTitle: true,
         leading: GestureDetector(
           onTap: () {},
