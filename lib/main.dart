@@ -65,21 +65,21 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Yoga Guru',
+      title: 'Yoga-star',
       theme: ThemeData(
         primarySwatch: Colors.blueGrey,
       ),
-      initialRoute: (email != null && uid != null) ? '/' : '/login',
+      initialRoute: (email != null && uid != null) ? '/' : '/',
       routes: <String, WidgetBuilder>{
         '/': (BuildContext context) {
-          var home = Home(
-                        email: email,
-                        uid: uid,
-                        displayName: displayName,
-                        photoUrl: photoUrl,
-                        cameras: cameras,
-                      );
-                    return home;
+          var home = MyHomePage(
+            email: email,
+            uid: uid,
+            displayName: displayName,
+            photoUrl: photoUrl,
+            cameras: cameras,
+          );
+          return home;
         },
         '/login': (BuildContext context) => Login(
               cameras: cameras,

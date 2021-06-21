@@ -24,7 +24,6 @@ abstract class BaseAuth {
 
 class Auth implements BaseAuth {
   static final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
-  static final Firestore _firestore = Firestore.instance;
   static final StorageReference _firebaseStorageReference =
       FirebaseStorage().ref();
 

@@ -16,7 +16,7 @@ class Poses extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.orange[700],
       appBar: AppBar(
         backgroundColor: Colors.black,
         centerTitle: true,

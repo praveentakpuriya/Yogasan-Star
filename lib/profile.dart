@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:percent_indicator/percent_indicator.dart';
 import 'package:yoga_guru/util/auth.dart';
+import 'package:yoga_guru/home.dart';
 
 class Profile extends StatefulWidget {
   final String email;
@@ -49,10 +50,24 @@ class _ProfileState extends State<Profile> {
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: Text(_titleText),
-        centerTitle: true,
-      ),
+          backgroundColor: Colors.black,
+          title: Text(_titleText),
+          centerTitle: true,
+          leading: GestureDetector(
+            onTap: () async {
+              Auth auth = Auth();
+              await auth.signOut();
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => Home(),
+                ),
+              );
+            },
+            child: Icon(
+              Icons.arrow_back, // add custom icons also
+            ),
+          )),
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(18.0),
