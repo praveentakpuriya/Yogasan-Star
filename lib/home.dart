@@ -148,7 +148,7 @@ class _MyHomePageState extends State<MyHomePage> {
               icon: Icon(Icons.home_outlined),
             ),
             BottomNavigationBarItem(
-              label: 'Blog',
+              label: 'Rank',
               icon: Icon(Icons.format_align_center_rounded),
             ),
             BottomNavigationBarItem(
