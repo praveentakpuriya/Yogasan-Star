@@ -76,7 +76,7 @@ class _MyHomePageState extends State<MyHomePage> {
       backgroundColor: Colors.black,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.orange[700],
+        backgroundColor: Colors.orange[800],
         title: Text('Yoga-Star'),
         centerTitle: true,
         leading: GestureDetector(
@@ -118,37 +118,49 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       body: bodyFunction(),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        currentIndex: _page,
-        backgroundColor: Colors.black87,
-        selectedItemColor: Colors.orange[700],
-        unselectedItemColor: Colors.white.withOpacity(.60),
-        selectedFontSize: 12,
-        unselectedFontSize: 10,
-        onTap: (index) {
-          setState(() {
-            _page = index;
-          });
-        },
-        items: [
-          BottomNavigationBarItem(
-            label: 'Home',
-            icon: Icon(Icons.home_outlined),
-          ),
-          BottomNavigationBarItem(
-            label: 'Blog',
-            icon: Icon(Icons.format_align_center_rounded),
-          ),
-          BottomNavigationBarItem(
-            label: 'Store',
-            icon: Icon(Icons.store_mall_directory_outlined),
-          ),
-          BottomNavigationBarItem(
-            label: 'User',
-            icon: Icon(Icons.person),
-          ),
-        ],
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          color: Colors.black87,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.white,
+              spreadRadius: 0.5,
+            ),
+          ],
+        ),
+        child: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          currentIndex: _page,
+          backgroundColor: Colors.black87,
+          elevation: 10,
+          selectedItemColor: Colors.orange[900],
+          unselectedItemColor: Colors.white.withOpacity(.70),
+          selectedFontSize: 12,
+          unselectedFontSize: 10,
+          onTap: (index) {
+            setState(() {
+              _page = index;
+            });
+          },
+          items: [
+            BottomNavigationBarItem(
+              label: 'Home',
+              icon: Icon(Icons.home_outlined),
+            ),
+            BottomNavigationBarItem(
+              label: 'Blog',
+              icon: Icon(Icons.format_align_center_rounded),
+            ),
+            BottomNavigationBarItem(
+              label: 'Store',
+              icon: Icon(Icons.store_mall_directory_outlined),
+            ),
+            BottomNavigationBarItem(
+              label: 'User',
+              icon: Icon(Icons.person),
+            ),
+          ],
+        ),
       ),
     );
   }
