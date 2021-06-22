@@ -1,41 +1,88 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
+import 'package:yoga_guru/blog.dart';
 import 'package:yoga_guru/login.dart';
+import 'package:yoga_guru/main.dart';
 import 'package:yoga_guru/poses.dart';
 import 'package:yoga_guru/profile.dart';
 import 'package:yoga_guru/scale_route.dart';
+import 'package:yoga_guru/store.dart';
+import 'package:yoga_guru/usertab.dart';
 import 'package:yoga_guru/util/pose_data.dart';
 import 'package:yoga_guru/util/user.dart';
-import 'package:yoga_guru/blog.dart';
-import 'package:yoga_guru/usertab.dart';
-import 'package:yoga_guru/store.dart';
 
-class Home extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
+  MyHomePage({
+    Key key,
+    this.title,
+    this.email,
+    this.uid,
+    this.displayName,
+    this.photoUrl,
+    this.cameras,
+  }) : super(key: key);
+  final String title;
   final String email;
   final String uid;
   final String displayName;
   final String photoUrl;
   final List<CameraDescription> cameras;
 
-  const Home({
-    this.email,
-    this.uid,
-    this.displayName,
-    this.photoUrl,
-    this.cameras,
-  });
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _page = 0;
+  User user = User();
+  GlobalKey _bottomNavigationKey = GlobalKey();
+
+  Widget bodyFunction() {
+    switch (_page) {
+      case 0:
+        return Home(
+          email: user.email,
+          uid: user.uid,
+          displayName: user.displayName,
+          photoUrl: user.photoUrl,
+          cameras: cameras,
+        );
+        break;
+      case 1:
+        return Blog();
+        break;
+      case 2:
+        return Store();
+        break;
+      case 3:
+        return UserTab();
+        break;
+      default:
+        return Home(
+          email: user.email,
+          uid: user.uid,
+          displayName: user.displayName,
+          photoUrl: user.photoUrl,
+          cameras: cameras,
+        );
+        break;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     User user = User();
-    int _currentIndex = 0;
-    String name = (user.displayName == null) ? '________ ' : user.displayName;
     return Scaffold(
       backgroundColor: Colors.black,
       appBar: AppBar(
         automaticallyImplyLeading: false,
-        backgroundColor: Colors.orange[700],
+<<<<<<< HEAD
+        backgroundColor: Colors.orange[800],
         title: Text('Yoga-Star'),
+=======
+        backgroundColor: Colors.orange[700],
+        title: Text('Yogasana-Star'),
+>>>>>>> d9f05b7200b90ebfc23b864c0ee95c2efe36218d
         centerTitle: true,
         leading: GestureDetector(
           onTap: () {},
@@ -75,190 +122,193 @@ class Home extends StatelessWidget {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        currentIndex: _currentIndex,
-        backgroundColor: Colors.black87,
-        selectedItemColor: Colors.orange[700],
-        unselectedItemColor: Colors.white.withOpacity(.60),
-        selectedFontSize: 12,
-        unselectedFontSize: 10,
-        onTap: (value) {
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(
-                builder: (context) => value == 0
-                    ? Home(
-                        email: email,
-                        uid: uid,
-                        displayName: displayName,
-                        photoUrl: photoUrl,
-                        cameras: cameras,
-                      )
-                    : value == 1
-                        ? Blog(
-                            email: email,
-                            uid: uid,
-                            displayName: displayName,
-                            photoUrl: photoUrl,
-                            cameras: cameras,
-                          )
-                        : value == 2
-                            ? Store(
-                                email: email,
-                                uid: uid,
-                                displayName: displayName,
-                                photoUrl: photoUrl,
-                                cameras: cameras,
-                              )
-                            : UserTab(
-                                email: email,
-                                uid: uid,
-                                displayName: displayName,
-                                photoUrl: photoUrl,
-                                cameras: cameras,
-                              )),
-          );
-        },
-        items: [
-          BottomNavigationBarItem(
-            label: 'Home',
-            icon: Icon(Icons.home_outlined),
-          ),
-          BottomNavigationBarItem(
-            label: 'Blog',
-            icon: Icon(Icons.format_align_center_rounded),
-          ),
-          BottomNavigationBarItem(
-            label: 'Store',
-            icon: Icon(Icons.store_mall_directory_outlined),
-          ),
-          BottomNavigationBarItem(
-            label: 'User',
-            icon: Icon(Icons.person),
-          ),
-        ],
+      body: bodyFunction(),
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          color: Colors.black87,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.white,
+              spreadRadius: 0.5,
+            ),
+          ],
+        ),
+        child: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          currentIndex: _page,
+          backgroundColor: Colors.black87,
+          elevation: 10,
+          selectedItemColor: Colors.orange[900],
+          unselectedItemColor: Colors.white.withOpacity(.70),
+          selectedFontSize: 12,
+          unselectedFontSize: 10,
+          onTap: (index) {
+            setState(() {
+              _page = index;
+            });
+          },
+          items: [
+            BottomNavigationBarItem(
+              label: 'Home',
+              icon: Icon(Icons.home_outlined),
+            ),
+            BottomNavigationBarItem(
+              label: 'Blog',
+              icon: Icon(Icons.format_align_center_rounded),
+            ),
+            BottomNavigationBarItem(
+              label: 'Store',
+              icon: Icon(Icons.store_mall_directory_outlined),
+            ),
+            BottomNavigationBarItem(
+              label: 'User',
+              icon: Icon(Icons.person),
+            ),
+          ],
+        ),
       ),
-      body: Center(
-        child: SingleChildScrollView(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: <Widget>[
-              Container(
-                padding: const EdgeInsets.only(top: 10.0),
-                child: Image(
-                  image: AssetImage('assets/images/yoga1.png'),
-                  width: 202,
-                  height: 250,
+    );
+  }
+}
+
+class Home extends StatelessWidget {
+  final String email;
+  final String uid;
+  final String displayName;
+  final String photoUrl;
+  final List<CameraDescription> cameras;
+
+  const Home({
+    this.email,
+    this.uid,
+    this.displayName,
+    this.photoUrl,
+    this.cameras,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    User user = User();
+    String name = (user.displayName == null) ? '________ ' : user.displayName;
+    return Container(
+      child: SingleChildScrollView(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            Container(
+              padding: const EdgeInsets.only(top: 10.0),
+              child: Image(
+                image: AssetImage('assets/images/yoga1.png'),
+                width: 202,
+                height: 250,
+              ),
+            ),
+            // Welcome Text
+            Padding(
+              padding: const EdgeInsets.all(5.0),
+              child: Text(
+                'Welcome\n$name',
+                textAlign: TextAlign.center,
+                style: TextStyle(
+                  fontSize: 22,
+                  color: Colors.white,
                 ),
               ),
-              // Welcome Text
-              Padding(
-                padding: const EdgeInsets.all(5.0),
+            ),
+
+            // Beginner Button
+            Padding(
+              padding: const EdgeInsets.all(32.0),
+              child: TextButton(
                 child: Text(
-                  'Welcome\n$name',
-                  textAlign: TextAlign.center,
+                  'Beginner',
                   style: TextStyle(
-                    fontSize: 22,
+                    fontSize: 20,
                     color: Colors.white,
                   ),
                 ),
-              ),
-
-              // Beginner Button
-              Padding(
-                padding: const EdgeInsets.all(32.0),
-                child: TextButton(
-                  child: Text(
-                    'Beginner',
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.white,
-                    ),
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.green,
+                  minimumSize: Size.fromHeight(1),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
                   ),
-                  style: TextButton.styleFrom(
-                    backgroundColor: Colors.green,
-                    minimumSize: Size.fromHeight(1),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    side: BorderSide(
-                      width: 1.4,
-                      color: Colors.orange[700],
-                    ),
-                  ),
-                  onPressed: () => _onPoseSelect(
-                    context,
-                    'Beginner',
-                    beginnerAsanas,
-                    Colors.green,
+                  side: BorderSide(
+                    width: 1.4,
+                    color: Colors.orange[700],
                   ),
                 ),
-              ),
-
-              // Intermediate Button
-              Padding(
-                padding: const EdgeInsets.all(32.0),
-                child: TextButton(
-                  child: Text(
-                    'Intermediate',
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.white,
-                    ),
-                  ),
-                  style: TextButton.styleFrom(
-                    backgroundColor: Colors.blue,
-                    minimumSize: Size.fromHeight(1),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    side: BorderSide(
-                      width: 1.4,
-                      color: Colors.orange[700],
-                    ),
-                  ),
-                  onPressed: () => _onPoseSelect(
-                    context,
-                    'Intermediate',
-                    intermediateAsanas,
-                    Colors.blue,
-                  ),
+                onPressed: () => _onPoseSelect(
+                  context,
+                  'Beginner',
+                  beginnerAsanas,
+                  Colors.green,
                 ),
               ),
+            ),
 
-              // Advance Button
-              Padding(
-                padding: const EdgeInsets.all(32.0),
-                child: TextButton(
-                  child: Text(
-                    'Advance',
-                    style: TextStyle(
-                      fontSize: 20,
-                      color: Colors.white,
-                    ),
-                  ),
-                  style: TextButton.styleFrom(
-                    backgroundColor: Colors.deepPurple[400],
-                    minimumSize: Size.fromHeight(1),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(30),
-                    ),
-                    side: BorderSide(
-                      width: 1.4,
-                      color: Colors.orange[700],
-                    ),
-                  ),
-                  onPressed: () => _onPoseSelect(
-                    context,
-                    'Advance',
-                    advanceAsanas,
-                    Colors.deepPurple[400],
+            // Intermediate Button
+            Padding(
+              padding: const EdgeInsets.all(32.0),
+              child: TextButton(
+                child: Text(
+                  'Intermediate',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
                   ),
                 ),
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                  minimumSize: Size.fromHeight(1),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  side: BorderSide(
+                    width: 1.4,
+                    color: Colors.orange[700],
+                  ),
+                ),
+                onPressed: () => _onPoseSelect(
+                  context,
+                  'Intermediate',
+                  intermediateAsanas,
+                  Colors.blue,
+                ),
               ),
-            ],
-          ),
+            ),
+
+            // Advance Button
+            Padding(
+              padding: const EdgeInsets.all(32.0),
+              child: TextButton(
+                child: Text(
+                  'Advance',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                  ),
+                ),
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.deepPurple[400],
+                  minimumSize: Size.fromHeight(1),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  side: BorderSide(
+                    width: 1.4,
+                    color: Colors.orange[700],
+                  ),
+                ),
+                onPressed: () => _onPoseSelect(
+                  context,
+                  'Advance',
+                  advanceAsanas,
+                  Colors.deepPurple[400],
+                ),
+              ),
+            ),
+          ],
         ),
       ),
     );
