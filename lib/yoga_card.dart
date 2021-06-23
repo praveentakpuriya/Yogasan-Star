@@ -59,7 +59,7 @@ class YogaCard extends StatelessWidget {
                 ),
               ),
               style: TextButton.styleFrom(
-                backgroundColor: Colors.green,
+                backgroundColor: Colors.black87,
                 minimumSize: Size.fromHeight(1),
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(30),

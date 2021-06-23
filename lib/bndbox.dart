@@ -147,7 +147,7 @@ class BndBox extends StatelessWidget {
   }
 
   void updateCounter(perc) {
-    if (perc > 0.5) {
+    if (perc > 0.5 && perc < 100.0) {
       (_counter += perc / 100) >= 1 ? _counter = 1.0 : _counter += perc / 100;
     }
     print("Counter: " + _counter.toString());

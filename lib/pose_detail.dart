@@ -9,7 +9,7 @@ class PostDetail extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlueAccent,
+      backgroundColor: Colors.black,
       appBar: AppBar(
         backgroundColor: Colors.black,
         centerTitle: true,
@@ -32,7 +32,7 @@ class PostDetail extends StatelessWidget {
               ),
               Text(
                 asanasInfo[asana],
-                style: TextStyle(fontSize: 20.0),
+                style: TextStyle(fontSize: 20.0, color: Colors.white70),
                 textAlign: TextAlign.center,
               ),
               Padding(
