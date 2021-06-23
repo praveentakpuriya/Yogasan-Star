@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:yoga_guru/util/pose_data.dart';
+import 'package:yogasanastar/util/pose_data.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class PostDetail extends StatelessWidget {
