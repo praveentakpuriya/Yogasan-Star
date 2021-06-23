@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:yoga_guru/pose_detail.dart';
+import 'package:yogasanastar/pose_detail.dart';
 
 class YogaCard extends StatelessWidget {
   final String asana;
