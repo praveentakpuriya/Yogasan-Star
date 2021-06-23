@@ -34,7 +34,7 @@ class BottomNavBar extends StatelessWidget {
           icon: Icon(Icons.home_outlined),
         ),
         BottomNavigationBarItem(
-          label: 'Blog',
+          label: 'Rank',
           icon: Icon(Icons.format_align_center_rounded),
         ),
         BottomNavigationBarItem(

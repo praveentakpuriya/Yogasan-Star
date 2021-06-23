@@ -24,7 +24,7 @@ class Poses extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-          height: 500,
+          height: 560,
           child: Swiper(
             itemCount: asanas.length,
             loop: false,
@@ -39,7 +39,7 @@ class Poses extends StatelessWidget {
             itemBuilder: (BuildContext context, int index) {
               return Center(
                 child: Container(
-                  height: 360,
+                  height: 560,
                   child: YogaCard(
                     asana: asanas[index],
                     color: color,
