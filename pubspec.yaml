@@ -1,4 +1,4 @@
-name: yoga_guru
+name: yogasanastar
 description: A new Flutter project.
 
 # The following defines the version and build number for your application.
@@ -19,6 +19,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  url_launcher: ^5.5.0
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

@@ -1,8 +1,8 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:yoga_guru/inference.dart';
-import 'package:yoga_guru/yoga_card.dart';
+import 'package:yogasanastar/inference.dart';
+import 'package:yogasanastar/yoga_card.dart';
 
 class Poses extends StatelessWidget {
   final List<CameraDescription> cameras;
@@ -24,7 +24,7 @@ class Poses extends StatelessWidget {
       ),
       body: Center(
         child: Container(
-          height: 500,
+          height: 560,
           child: Swiper(
             itemCount: asanas.length,
             loop: false,
@@ -39,7 +39,7 @@ class Poses extends StatelessWidget {
             itemBuilder: (BuildContext context, int index) {
               return Center(
                 child: Container(
-                  height: 360,
+                  height: 560,
                   child: YogaCard(
                     asana: asanas[index],
                     color: color,

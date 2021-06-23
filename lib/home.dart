@@ -1,15 +1,15 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-import 'package:yoga_guru/blog.dart';
-import 'package:yoga_guru/login.dart';
-import 'package:yoga_guru/main.dart';
-import 'package:yoga_guru/poses.dart';
-import 'package:yoga_guru/profile.dart';
-import 'package:yoga_guru/scale_route.dart';
-import 'package:yoga_guru/store.dart';
-import 'package:yoga_guru/usertab.dart';
-import 'package:yoga_guru/util/pose_data.dart';
-import 'package:yoga_guru/util/user.dart';
+import 'package:yogasanastar/blog.dart';
+import 'package:yogasanastar/login.dart';
+import 'package:yogasanastar/main.dart';
+import 'package:yogasanastar/poses.dart';
+import 'package:yogasanastar/profile.dart';
+import 'package:yogasanastar/scale_route.dart';
+import 'package:yogasanastar/store.dart';
+import 'package:yogasanastar/usertab.dart';
+import 'package:yogasanastar/util/pose_data.dart';
+import 'package:yogasanastar/util/user.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({
@@ -77,7 +77,7 @@ class _MyHomePageState extends State<MyHomePage> {
       appBar: AppBar(
         automaticallyImplyLeading: false,
         backgroundColor: Colors.orange[700],
-        title: Text('Yoga-Star'),
+        title: Text('Yogasana-Star'),
         centerTitle: true,
         leading: GestureDetector(
           onTap: () {},
@@ -118,37 +118,49 @@ class _MyHomePageState extends State<MyHomePage> {
         ],
       ),
       body: bodyFunction(),
-      bottomNavigationBar: BottomNavigationBar(
-        type: BottomNavigationBarType.fixed,
-        currentIndex: _page,
-        backgroundColor: Colors.black87,
-        selectedItemColor: Colors.orange[700],
-        unselectedItemColor: Colors.white.withOpacity(.60),
-        selectedFontSize: 12,
-        unselectedFontSize: 10,
-        onTap: (index) {
-          setState(() {
-            _page = index;
-          });
-        },
-        items: [
-          BottomNavigationBarItem(
-            label: 'Home',
-            icon: Icon(Icons.home_outlined),
-          ),
-          BottomNavigationBarItem(
-            label: 'Blog',
-            icon: Icon(Icons.format_align_center_rounded),
-          ),
-          BottomNavigationBarItem(
-            label: 'Store',
-            icon: Icon(Icons.store_mall_directory_outlined),
-          ),
-          BottomNavigationBarItem(
-            label: 'User',
-            icon: Icon(Icons.person),
-          ),
-        ],
+      bottomNavigationBar: Container(
+        decoration: BoxDecoration(
+          color: Colors.black87,
+          boxShadow: [
+            BoxShadow(
+              color: Colors.white,
+              spreadRadius: 0.5,
+            ),
+          ],
+        ),
+        child: BottomNavigationBar(
+          type: BottomNavigationBarType.fixed,
+          currentIndex: _page,
+          backgroundColor: Colors.black87,
+          elevation: 10,
+          selectedItemColor: Colors.orange[900],
+          unselectedItemColor: Colors.white.withOpacity(.70),
+          selectedFontSize: 12,
+          unselectedFontSize: 10,
+          onTap: (index) {
+            setState(() {
+              _page = index;
+            });
+          },
+          items: [
+            BottomNavigationBarItem(
+              label: 'Home',
+              icon: Icon(Icons.home_outlined),
+            ),
+            BottomNavigationBarItem(
+              label: 'Rank',
+              icon: Icon(Icons.format_align_center_rounded),
+            ),
+            BottomNavigationBarItem(
+              label: 'Store',
+              icon: Icon(Icons.store_mall_directory_outlined),
+            ),
+            BottomNavigationBarItem(
+              label: 'User',
+              icon: Icon(Icons.person),
+            ),
+          ],
+        ),
       ),
     );
   }

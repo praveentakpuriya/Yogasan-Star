@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:yogasanastar/pose_detail.dart';
 
 class YogaCard extends StatelessWidget {
   final String asana;
@@ -36,6 +37,45 @@ class YogaCard extends StatelessWidget {
           Text(
             asana,
             style: TextStyle(fontSize: 20),
+          ),
+          // IconButton(
+          //   iconSize: 45,
+          //   icon: Icon(Icons.info_outline, color: Colors.orangeAccent),
+          //   onPressed: () {
+          //     Navigator.push(
+          //         context,
+          //         MaterialPageRoute(
+          //             builder: (context) => PostDetail(asana: asana)));
+          //   },
+          // ),
+          Padding(
+            padding: const EdgeInsets.all(12.0),
+            child: TextButton(
+              child: Text(
+                'Learn',
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.white,
+                ),
+              ),
+              style: TextButton.styleFrom(
+                backgroundColor: Colors.black87,
+                minimumSize: Size.fromHeight(1),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(30),
+                ),
+                side: BorderSide(
+                  width: 1.4,
+                  color: Colors.orange[700],
+                ),
+              ),
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => PostDetail(asana: asana)));
+              },
+            ),
           )
         ],
       ),
