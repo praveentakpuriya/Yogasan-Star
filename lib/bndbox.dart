@@ -103,8 +103,7 @@ class BndBox extends StatelessWidget {
               _label.toString(),
               style: TextStyle(
                 fontSize: 50,
-                fontWeight: FontWeight.bold,
-                color: Colors.green,
+                color: Colors.orangeAccent,
               ),
             ),
           ),
@@ -114,11 +113,11 @@ class BndBox extends StatelessWidget {
               animation: true,
               lineHeight: 20.0,
               animationDuration: 500,
-              animateFromLastPercent: true,
+              animateFromLastPercent: false,
               percent: _counter,
               center: Text("${(_counter * 100).toStringAsFixed(1)} %"),
               linearStrokeCap: LinearStrokeCap.roundAll,
-              progressColor: Colors.green,
+              progressColor: Colors.orangeAccent,
             ),
           ),
         ],
@@ -148,7 +147,7 @@ class BndBox extends StatelessWidget {
   }
 
   void updateCounter(perc) {
-    if (perc > 0.5) {
+    if (perc > 0.5 && perc < 100.0) {
       (_counter += perc / 100) >= 1 ? _counter = 1.0 : _counter += perc / 100;
     }
     print("Counter: " + _counter.toString());
