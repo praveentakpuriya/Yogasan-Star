@@ -11,16 +11,16 @@ List<String> intermediateAsanas = [
   'Dhanurasana',
   'Padhastasana',
   'Ustrasana',
-  // 'Halasana',
+  'Halasana',
 
   //// 'Sarvangasana'
 ];
 
 List<String> advanceAsanas = [
-  'coming_soon',
-  // 'Bakasana',
-  // 'Mayurasana',
-  // 'Sirsasana',
+  // 'coming_soon',
+  'Bakasana',
+  'Mayurasana',
+  'Sirsasana',
 ];
 
 var asanasInfo = {
@@ -40,10 +40,14 @@ var asanasInfo = {
       "Pada hastasana is a stretching pose. It gives a lot of stretch to your thigh and calf muscle. It also gives a stretch to your lower back. Pada means foot and hast means hand, asana means to be in posture where you can stay firmly and comfortably for longer. Hence Padahastasana is the posture where the feet are touched by the hands.Padahastasana is also used in the practice of Suryanamaskara. Suryanamaskara is also known as sun salutation. It comprises of 12 steps. Padahastasana is the second and eleventh step among twelve steps of Suryanamaskara",
   'Ustrasana':
       "Ustrasana also known as Camel Pose is a deep backward bending pose. The name, ‘Ustrasana’ comes from the Sanskrit words, ustra and asana, where ustra stands for camel and asana stands for ‘posture. This pose is very beneficial for developing flexibility in the body, there are many other benefits of Ustrasana but first, let us know the steps to practice ‘Ustrasana’",
-  //  'Halasana':"Halasana is an inverted yoga posture thus recommended to be practiced by intermediate yoga practitioners. The name Halasana is derived from two Sanskrit words. ‘Hal’ meaning ‘Plow’ and ‘asana’ meaning ‘posture’. Hal is a farming tool used in Indian agriculture. The shape of the body in Halasana resembles that of a Plow and hence the name.",
-  // 'Bakasana':"The word Baka is derived from the Sanskrit word which means Crane and the meaning of Asana is Posture. This Asana is very similar to the body posture of a crane, so it is also named as Crane pose. Bakasana is a compact arm leveling posture that helps in strengthening the arms similarly as the abdominal organs. The anatomical focus of this pose is that the wrists. By frequently practicing the Bakasana, the spine stretches to its full length and this will increase its flexibility for the most part. This Asan comes under the advance Asana. Bakasana is the best balancing Asana. Bakasana is a kind of yoga posture that seems to be troublesome to perform, however actually is quite easy. There is one another Asana that is very similar to Bakasana and that is Kakasana but has some differences",
-  // 'Mayurasana':"In Sanskrit, Mayur Stands for Peacock and meaning of Asana is Pose or Posture. As indicated by the Indian mythology, the peacock is a symbol of love and everlasting status. Mayurasana is said to take after a peacock when it struts around with its plumes down. Peacock Pose has a mess of advantages, and in spite of the fact that it looks entangled, with a little practice, Mayurasana (Peacock Pose) is very simple to do.",
-  // 'Sirsasana':"Sirsasana or the head stand pose is the most important among inverted asanas. In Sanskrit the word ‘sirsha’ means ‘head’ and ‘asana’ means pose. Sirsasana is considered the king of all asanas and is usually done at the end of the yoga asana practices. It is quite tougher to do and regarded as hardest of all, but with the regular practising it becomes easier and satisfactory to practice. Now, we will be describing the other details of Sirsasana like the steps, advantages and contradictions",
+  'Halasana':
+      "Halasana is an inverted yoga posture thus recommended to be practiced by intermediate yoga practitioners. The name Halasana is derived from two Sanskrit words. ‘Hal’ meaning ‘Plow’ and ‘asana’ meaning ‘posture’. Hal is a farming tool used in Indian agriculture. The shape of the body in Halasana resembles that of a Plow and hence the name.",
+  'Bakasana':
+      "The word Baka is derived from the Sanskrit word which means Crane and the meaning of Asana is Posture. This Asana is very similar to the body posture of a crane, so it is also named as Crane pose. Bakasana is a compact arm leveling posture that helps in strengthening the arms similarly as the abdominal organs. The anatomical focus of this pose is that the wrists. By frequently practicing the Bakasana, the spine stretches to its full length and this will increase its flexibility for the most part. This Asan comes under the advance Asana. Bakasana is the best balancing Asana. Bakasana is a kind of yoga posture that seems to be troublesome to perform, however actually is quite easy. There is one another Asana that is very similar to Bakasana and that is Kakasana but has some differences",
+  'Mayurasana':
+      "In Sanskrit, Mayur Stands for Peacock and meaning of Asana is Pose or Posture. As indicated by the Indian mythology, the peacock is a symbol of love and everlasting status. Mayurasana is said to take after a peacock when it struts around with its plumes down. Peacock Pose has a mess of advantages, and in spite of the fact that it looks entangled, with a little practice, Mayurasana (Peacock Pose) is very simple to do.",
+  'Sirsasana':
+      "Sirsasana or the head stand pose is the most important among inverted asanas. In Sanskrit the word ‘sirsha’ means ‘head’ and ‘asana’ means pose. Sirsasana is considered the king of all asanas and is usually done at the end of the yoga asana practices. It is quite tougher to do and regarded as hardest of all, but with the regular practising it becomes easier and satisfactory to practice. Now, we will be describing the other details of Sirsasana like the steps, advantages and contradictions",
   'coming_soon': "new yoga posture comming soon",
 };
 
@@ -59,11 +63,11 @@ var asanasUrl = {
   'Padhastasana': 'https://youtu.be/Kyk0NEiCAIM',
   'Ustrasana': 'https://youtu.be/ItWYVxm3Mss',
 
-  // 'Halasana': 'https://youtu.be/KFhjigdeT5Q',
+  'Halasana': 'https://youtu.be/KFhjigdeT5Q',
 
   //advance
-  // 'Bakasana' :'https://youtu.be/P9mizfrimkc',
-  // 'Mayurasana' :'https://youtu.be/GC12vH-YitU',
-  // 'Sirsasana': 'https://youtu.be/8CS_uTXnWZ0',
-  'coming_soon': '#',
+  'Bakasana': 'https://youtu.be/P9mizfrimkc',
+  'Mayurasana': 'https://youtu.be/GC12vH-YitU',
+  'Sirsasana': 'https://youtu.be/8CS_uTXnWZ0',
+  // 'coming_soon': '#',
 };

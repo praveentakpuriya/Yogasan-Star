@@ -2,8 +2,8 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:percent_indicator/percent_indicator.dart';
-import 'package:yoga_guru/util/auth.dart';
-import 'package:yoga_guru/home.dart';
+import 'package:yogasanastar/util/auth.dart';
+import 'package:yogasanastar/home.dart';
 
 class Profile extends StatefulWidget {
   final String email;

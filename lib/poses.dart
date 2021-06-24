@@ -1,8 +1,8 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:yoga_guru/inference.dart';
-import 'package:yoga_guru/yoga_card.dart';
+import 'package:yogasanastar/inference.dart';
+import 'package:yogasanastar/yoga_card.dart';
 
 class Poses extends StatelessWidget {
   final List<CameraDescription> cameras;

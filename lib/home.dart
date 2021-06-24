@@ -1,15 +1,15 @@
 import 'package:camera/camera.dart';
 import 'package:flutter/material.dart';
-import 'package:yoga_guru/blog.dart';
-import 'package:yoga_guru/login.dart';
-import 'package:yoga_guru/main.dart';
-import 'package:yoga_guru/poses.dart';
-import 'package:yoga_guru/profile.dart';
-import 'package:yoga_guru/scale_route.dart';
-import 'package:yoga_guru/store.dart';
-import 'package:yoga_guru/usertab.dart';
-import 'package:yoga_guru/util/pose_data.dart';
-import 'package:yoga_guru/util/user.dart';
+import 'package:yogasanastar/blog.dart';
+import 'package:yogasanastar/login.dart';
+import 'package:yogasanastar/main.dart';
+import 'package:yogasanastar/poses.dart';
+import 'package:yogasanastar/profile.dart';
+import 'package:yogasanastar/scale_route.dart';
+import 'package:yogasanastar/store.dart';
+import 'package:yogasanastar/usertab.dart';
+import 'package:yogasanastar/util/pose_data.dart';
+import 'package:yogasanastar/util/user.dart';
 
 class MyHomePage extends StatefulWidget {
   MyHomePage({
