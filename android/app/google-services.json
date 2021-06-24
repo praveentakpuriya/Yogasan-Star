@@ -33,35 +33,6 @@
           ]
         }
       }
-    },
-    {
-      "client_info": {
-        "mobilesdk_app_id": "1:567262900810:android:7862fe3da66860a2632cb3",
-        "android_client_info": {
-          "package_name": "com.computerphiles.yogasanastar"
-        }
-      },
-      "oauth_client": [
-        {
-          "client_id": "567262900810-2r6vcovqi20o2cmjhacail93t6qia77n.apps.googleusercontent.com",
-          "client_type": 3
-        }
-      ],
-      "api_key": [
-        {
-          "current_key": "AIzaSyBOwkUFwUYjY4LDLt7Dj5Luzvyo2dK3Mz4"
-        }
-      ],
-      "services": {
-        "appinvite_service": {
-          "other_platform_oauth_client": [
-            {
-              "client_id": "567262900810-2r6vcovqi20o2cmjhacail93t6qia77n.apps.googleusercontent.com",
-              "client_type": 3
-            }
-          ]
-        }
-      }
     }
   ],
   "configuration_version": "1"
