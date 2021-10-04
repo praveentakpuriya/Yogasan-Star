@@ -21,12 +21,15 @@ List<String> advanceAsanas = [
   'Bakasana',
   'Mayurasana',
   'Sirsasana',
+<<<<<<< HEAD
 ];
 
 List<String> suryanamskarAsanas = [
   'surya namskar',
 
   //// 'Sarvangasana'
+=======
+>>>>>>> 1d6c526eea94fd7a4803aeaa573999f47d39d65d
 ];
 
 var asanasInfo = {
@@ -75,5 +78,9 @@ var asanasUrl = {
   'Bakasana': 'https://youtu.be/P9mizfrimkc',
   'Mayurasana': 'https://youtu.be/GC12vH-YitU',
   'Sirsasana': 'https://youtu.be/8CS_uTXnWZ0',
+<<<<<<< HEAD
   'coming_soon': '#',
+=======
+  // 'coming_soon': '#',
+>>>>>>> 1d6c526eea94fd7a4803aeaa573999f47d39d65d
 };

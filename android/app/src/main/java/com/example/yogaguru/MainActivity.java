@@ -1,4 +1,4 @@
-package com.example.yogasanastar;
+package com.computerphiles.yogasanastar;
 
 import org.tensorflow.lite.Interpreter;
 import android.os.Bundle;
