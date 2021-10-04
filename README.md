@@ -7,8 +7,6 @@ Flutter + Tenserflow Lite based Yoga Pose recogntion Application,
 * Praveen Takpuriya
 * Lalit Patidar
 * Saurabh Tanwar
-* Kajal Singh
-* Ravi Vishwakarma
 * Rishika Jain
 
 # How to run App
