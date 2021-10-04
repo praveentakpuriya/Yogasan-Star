@@ -303,6 +303,37 @@ class Home extends StatelessWidget {
                 ),
               ),
             ),
+
+            // surya Button
+            Padding(
+              padding: const EdgeInsets.all(32.0),
+              child: TextButton(
+                child: Text(
+                  'Suryanamskar',
+                  style: TextStyle(
+                    fontSize: 20,
+                    color: Colors.white,
+                  ),
+                ),
+                style: TextButton.styleFrom(
+                  backgroundColor: Colors.blue,
+                  minimumSize: Size.fromHeight(1),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30),
+                  ),
+                  side: BorderSide(
+                    width: 1.4,
+                    color: Colors.orange[700],
+                  ),
+                ),
+                onPressed: () => _onPoseSelect(
+                  context,
+                  'Suryanamskar',
+                  suryanamskarAsanas,
+                  Colors.white,
+                ),
+              ),
+            ),
           ],
         ),
       ),
